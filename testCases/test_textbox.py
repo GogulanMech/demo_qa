@@ -17,12 +17,13 @@ class Test_001_text:
             assert True
             driver.quit()
         else:
-            driver.save_screenshot("ScreenShots\\test_homepage_title.png")
+            driver.save_screenshot("D:\\Automation_Program\\phython\\program\\Hybrid_Frame_Work\\demo_qa\\ScreenShots\\test_homepage_title.png")
             driver.quit()
             assert False
     def test_text(self, setup):
         driver = setup
         driver.get(self.url)
+        driver.maximize_window()
         txt = Text(driver)
         txt.click_element()
         txt.click_text()
@@ -32,12 +33,11 @@ class Test_001_text:
         txt.set_permanentaddress("Tirupur")
         txt.click_submit()
         message = driver.find_element(By.TAG_NAME, "Body")
-        print(message.text)
         if "Name:gogulan" and "Email:gogulanknp@gmail.com" and "Current Address :palladam" and \
                 "Permananet Address :Tirupur" in message.text:
             assert True
             driver.quit()
         else:
-            driver.save_screenshot("ScreenShots\\test_text.png")
+            driver.save_screenshot("D:\\Automation_Program\\phython\\program\\Hybrid_Frame_Work\\demo_qa\\ScreenShots\\test_text.png")
             driver.quit()
             assert False
